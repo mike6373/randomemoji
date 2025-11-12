@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎲 Goober Emoji Story Generator 🎬</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    background: #fef5c4;
+    color: #333;
+    padding: 50px;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  .emoji-box {
+    font-size: 3em;
+    margin: 20px 0;
+  }
+  button {
+    background: #ffb347;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  button:hover {
+    background: #ffcc33;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎲 Goober Emoji</h1>
+<h1>Story Generator 🎬</h1>
+<p>Press the button to get a random cartoon idea!</p>
+
+<div class="emoji-box" id="emojiBox">🤔🤔🤔</div>
+<button onclick="generate()">Generate Story</button>
+
+<p id="ideaText"></p>
+
+<script>
+  const emojis = [
+    // 🐾 Characters
+    "🐰","🐱","🐸","🐤","🐻","🐭","🐷","🐶","🐼","🦊","🦆","🦄","🐮","🦖","🐙",
+    // 🍕 Objects
+    "🍕","🍩","🍔","🍪","🍦","🥕","🍿","🍉","🍎","🍗","🧁","🥚",
+    // 🧰 Items / Props
+    "🚀","🎈","💥","🎩","🪣","🧽","🪤","🪞","🎨","🎤","🪅","🧲","🪀","📺","💡","🧹","🪆",
+    // 🏠 Places / Backgrounds
+    "🏠","🏫","🏖️","🎢","🪐","🌋","🪣","🧊","🌈","🧳","🏰","🏝️","🛸",
+    // 🎭 Pop Culture / Silly
+    "🧙‍♂️","🦸‍♂️","🧌","🤡","👽","👑","🦇","🐭","🎮","🧑‍🚀","🧟","🧞","🕺","🫏"
+  ];
+
+  const actions = [
+    "tries to fix","accidentally breaks","runs away from","discovers","builds",
+    "throws","eats","gets stuck in","fights","paints","inflates","launches",
+    "tickles","argues with","swallows","rides","clones","zaps","hides inside",
+    "sings to","flushes","trips over","worships","juggles","catapults"
+  ];
+
+  const endings = [
+    "and chaos happens!","and it explodes!","and it actually works?!",
+    "but it backfires!","and everyone laughs.","and gets covered in goop!",
+    "and now it’s alive!","and time rewinds!","and the mayor bans it!",
+    "and suddenly it’s a musical!","and aliens applaud.","and the floor disappears!",
+    "and turns into a talking sandwich!","and now the universe resets.",
+    "and a giant hand grabs them!","and they wake up in the 1980s!"
+  ];
+
+  function generate() {
+    const emoji1 = emojis[Math.floor(Math.random() * emojis.length)];
+    const emoji2 = emojis[Math.floor(Math.random() * emojis.length)];
+    const emoji3 = emojis[Math.floor(Math.random() * emojis.length)];
+
+    document.getElementById("emojiBox").textContent = `${emoji1} ${emoji2} ${emoji3}`;
+
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    const ending = endings[Math.floor(Math.random() * endings.length)];
+
+
+  }
+</script>
+
+</body>
+</html>
