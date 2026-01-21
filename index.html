@@ -19,7 +19,7 @@
     font-size: 3em;
     margin: 20px 0;
   }
-  button {
+  button, .manual-btn {
     background: #ffb347;
     border: none;
     padding: 15px 30px;
@@ -27,8 +27,12 @@
     border-radius: 15px;
     cursor: pointer;
     transition: 0.2s;
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
   }
-  button:hover {
+  button:hover, .manual-btn:hover {
     background: #ffcc33;
   }
 </style>
@@ -40,7 +44,18 @@
 <p>Press the button to get a random cartoon idea!</p>
 
 <div class="emoji-box" id="emojiBox">🤔🤔🤔</div>
+
 <button onclick="generate()">Generate Story</button>
+
+<br>
+
+<!-- 📘 INSTRUCTION MANUAL BUTTON -->
+<a 
+  href="emoji-story-manual.pdf" 
+  target="_blank" 
+  class="manual-btn">
+  📘 Emoji Story Instruction Manual
+</a>
 
 <p id="ideaText"></p>
 
@@ -53,9 +68,9 @@
     // 🧰 Items / Props
     "🚀","🎈","💥","🎩","🪣","🧽","🪤","🪞","🎨","🎤","🪅","🧲","🪀","📺","💡","🧹","🪆",
     // 🏠 Places / Backgrounds
-    "🏠","🏫","🏖️","🎢","🪐","🌋","🪣","🧊","🌈","🧳","🏰","🏝️","🛸",
+    "🏠","🏫","🏖️","🎢","🪐","🌋","🧊","🌈","🧳","🏰","🏝️","🛸",
     // 🎭 Pop Culture / Silly
-    "🧙‍♂️","🦸‍♂️","🧌","🤡","👽","👑","🦇","🐭","🎮","🧑‍🚀","🧟","🧞","🕺","🫏"
+    "🧙‍♂️","🦸‍♂️","🧌","🤡","👽","👑","🦇","🎮","🧑‍🚀","🧟","🧞","🕺","🫏"
   ];
 
   const actions = [
@@ -83,8 +98,6 @@
 
     const action = actions[Math.floor(Math.random() * actions.length)];
     const ending = endings[Math.floor(Math.random() * endings.length)];
-
-
   }
 </script>
 
